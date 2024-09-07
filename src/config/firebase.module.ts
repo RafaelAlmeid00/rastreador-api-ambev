@@ -1,23 +1,18 @@
 import { Module } from '@nestjs/common';
 import * as admin from 'firebase-admin';
-import { readFileSync } from 'fs';
-import { join } from 'path';
 
 @Module({
   providers: [
     {
       provide: 'FIREBASE_ADMIN',
       useFactory: () => {
-        const serviceAccountPath = join(
-          'easytracker-f7b08-firebase-adminsdk-vaqk5-d8fb2cd702.json',
-        );
-        const serviceAccount = JSON.parse(
-          readFileSync(serviceAccountPath, 'utf8'),
-        );
-
         return admin.initializeApp({
-          credential: admin.credential.cert(serviceAccount),
-          databaseURL: serviceAccount.databaseURL,
+          credential: admin.credential.cert({
+            projectId: process.env.FIREBASE_PROJECT_ID,
+            privateKey: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'), // Necessário para preservar as quebras de linha
+            clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+          }),
+          databaseURL: process.env.FIREBASE_DATABASE_URL,
         });
       },
     },

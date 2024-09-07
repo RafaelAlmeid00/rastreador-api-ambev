@@ -1,5 +1,7 @@
 import { Module } from '@nestjs/common';
 import * as admin from 'firebase-admin';
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 @Module({
   providers: [

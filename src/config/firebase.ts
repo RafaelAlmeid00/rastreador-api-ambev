@@ -2,11 +2,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
-
-// Load environment variables (if necessary, in a Node.js environment)
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-}
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 // Firebase configuration using environment variables
 export const firebaseConfig = {

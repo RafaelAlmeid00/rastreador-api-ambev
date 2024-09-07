@@ -10,7 +10,7 @@ import { CsvController031120 } from 'src/controller/03.11.20.controller';
 import { CsvService031120 } from 'src/service/03.11.20.service';
 import { CsvControllerPCD } from 'src/controller/PCD.controller';
 import { CsvServicePCD } from 'src/service/PCD.service.';
-import { CsvControllerBEES } from 'src/controller/bees.controller';
+import { CsvControllerBEES } from 'src/controller/BEES.controller';
 import { CsvServiceBEES } from 'src/service/BEES.service.';
 
 @Module({

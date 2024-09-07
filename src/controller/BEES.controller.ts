@@ -13,7 +13,7 @@ import { Response } from 'express';
 import * as path from 'path';
 import * as fs from 'fs';
 import * as util from 'util';
-import { CsvServiceBEES } from 'src/service/BEES.service.';
+import { CsvServiceBEES } from 'src/service/bees.service.';
 
 // Promisify fs.readFile for use with async/await
 const readFile = util.promisify(fs.readFile);

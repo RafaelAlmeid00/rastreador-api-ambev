@@ -12,7 +12,7 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { Response } from 'express';
 import * as fs from 'fs';
 import * as path from 'path';
-import { CsvServiceBEES } from 'src/service/bees.service';
+import { CsvServiceBEES } from '../service/bees.service';
 import * as util from 'util';
 
 // Promisify fs.readFile for use with async/await
